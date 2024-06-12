@@ -8,7 +8,7 @@ app = Flask(__name__)
 swagger = Swagger(app)
 
 # Load the trained model
-model = joblib.load('/Users/lindani/Documents/user-churn/model_churn.pkl')
+model = joblib.load('model_churn.pkl')
 
 @app.route('/')
 def hello_world():
