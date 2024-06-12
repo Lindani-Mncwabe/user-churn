@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-churn-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-churn
+  template:
+    metadata:
+      labels:
+        app: user-churn
+    spec:
+      containers:
+      - name: user-churn
+        image: gcr.io/ornate-genre-425416-q8/user-churn:v4
+        ports:
+        - containerPort: 5009
